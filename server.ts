@@ -12,13 +12,12 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'secure_default_complaint_registration_jwt_secret_token';
-const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:5173';
 
 app.use(express.json());
 
-// --- CORS Middleware ---
+// --- CORS Middleware (Open for Vercel deployment) ---
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', CORS_ORIGIN);
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   res.header('Access-Control-Allow-Credentials', 'true');
@@ -583,7 +582,7 @@ async function startServer() {
 
   app.listen(PORT, "0.0.0.0", () => {
     console.log(`Complaint Center server running on http://localhost:${PORT}`);
-    console.log(`CORS enabled for: ${CORS_ORIGIN}`);
+    console.log(`CORS: Open to all origins (*)`);
     console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   });
 }
