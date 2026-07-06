@@ -2,7 +2,7 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": "react",
+  "framework": "react-router",
   "rewrites": [
     {
       "source": "/api/(.*)",
