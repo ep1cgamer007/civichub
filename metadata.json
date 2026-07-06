@@ -1,0 +1,6 @@
+{
+  "name": "CivicHub",
+  "description": "A simpler, user-friendly digital civic workspace to report issues, chat with responders, and track resolutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
